@@ -231,7 +231,7 @@
         @keyframes ombreApparition { 0%, 88% { opacity: 0; } 100% { opacity: 1; } }
 
         svg text.boule-chiffre {
-            font-weight: 900; font-size: 26px; fill: #4a3520;
+            font-weight: 900; font-size: 25px; fill: #4a3520;
             text-anchor: middle; dominant-baseline: middle; font-family: 'Georgia', serif;
         }
         svg text.boule-chiffre.interrogation { font-style: normal; font-size: 30px; fill: #8b6914; opacity: 0.65; }
@@ -258,7 +258,7 @@
         .message-zone { text-align: center; font-size: 0.8em; font-weight: 600; min-height: 20px; color: #f39c12; margin: 0; }
         .message.victoire { color: #2ecc71; }
         .message.defaite { color: #e74c3c; }
-        .message.info { color: #3498db; }
+        .message.info { color: #f5e6d3; }
 
         .tirage-panel {
             display: grid; grid-template-columns: 104px minmax(0, 1fr) 104px;
@@ -988,7 +988,7 @@
             var total = compterNumerosATirer();
             if (cocherAuto) afficherMessage('Temps écoulé : cases cochées automatiquement', 'info');
             else if (total === 0) afficherMessage(' ', 'info');
-            else afficherMessage('Bien coché !', 'victoire');
+            else afficherMessage('Bien vu!', 'victoire');
 
             var reset = function() {
                 etatJeu.peutTirer = true; document.getElementById('btnTirage').disabled = false;
@@ -1053,7 +1053,7 @@
                     setTimeout(function() { declencherVictoireHumaine(); }, 1500);
                 }
             } else if (gagnant === 'joueur2') {
-                afficherMessage(etatJeu.nomJ2 + ' a terminé sa grille !', 'defaite');
+                afficherMessage(etatJeu.nomJ2 + ' a terminé sa grille ! Bravo !', 'defaite');
                 jouerSon('bingo');
                 setTimeout(function() { declencherVictoireLocale(etatJeu.nomJ2, false); }, 1200);
             } else if (gagnant === 'robot') {
