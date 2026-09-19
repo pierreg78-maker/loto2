@@ -890,7 +890,7 @@
                 else afficherMessage(parts.join(' — '), 'info');
             } else {
                 var total = compterNumerosATirer(), restant = Math.max(0, total - compterNumerosCoches());
-                afficherMessage(restant + (restant <= 1 ? ' numéro à cocher' : ' numéros à cocher'), restant === 0 ? 'victoire' : 'info');
+                afficherMessage(restant + (restant <= 1 ? '  ' : '  '), restant === 0 ? 'victoire' : 'info');
             }
         }
 
@@ -922,7 +922,7 @@
 
                 var total = compterNumerosATirer();
                 if (total > 0) { mettreAJourCompteurCoches(); demarrerTimer(); }
-                else { afficherMessage('0 numéro à cocher', 'info'); etatJeu.timerActif = false; finirTirage(false, 500); }
+                else { afficherMessage('', 'info'); etatJeu.timerActif = false; finirTirage(false, 500); }
 
                 etatJeu.enCours = false;
 
@@ -986,8 +986,8 @@
             document.getElementById('timerZone').innerHTML = '';
             validerCoches();
             var total = compterNumerosATirer();
-            if (cocherAuto) afficherMessage('Temps écoulé : coches automatiques', 'info');
-            else if (total === 0) afficherMessage('Aucun numéro à cocher', 'info');
+            if (cocherAuto) afficherMessage('Temps écoulé : cases cochées automatiquement', 'info');
+            else if (total === 0) afficherMessage(' ', 'info');
             else afficherMessage('Bien coché !', 'victoire');
 
             var reset = function() {
